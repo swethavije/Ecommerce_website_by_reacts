@@ -1,0 +1,42 @@
+.header{
+    padding: 0 15px;
+    background-color:rgb(246, 221, 120);
+    .row{
+         display:flex;
+         align-items: center;
+         justify-content: space-between;
+         .logopic{
+            width:70%;
+            height:auto;
+         }
+         .navbar .linkroute{
+            text-decoration: none;
+            padding-right: 15px;
+            font-size: 14px;
+            color:black;
+         }
+           .linkroute:hover{
+             background-color: bisque;
+             color: black;
+             padding: 6px 10px;
+             border-radius: 10px;
+           }
+           
+
+        .account {
+            display: flex;
+            align-items: center;
+           a{
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+             padding: 10px;
+           }
+           .icon{
+            align-items: center;
+           }
+    
+        }
+        
+    }
+}

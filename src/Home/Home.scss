@@ -1,0 +1,39 @@
+.home{
+    margin:10px 20px
+}
+
+
+.productBox{
+    box-shadow: 5px 5px 5px #ccc;
+    
+    .productimg{
+        width: 100%;
+        height: auto;
+    }
+    .productContent{
+        border: 1px solid #ccc;
+    border-radius: 0 0 6px 6px;
+       
+        padding: 10px 20px;
+    }
+    .productContent h3{
+        font-size: 16px;
+        margin-top: 0;
+
+    }
+    .productContent h6{
+        color:red;
+        
+    }
+    .productContent p{
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .productIcons{
+        display:flex;
+        justify-content: space-around;
+        #fav{
+            color: red;
+        }
+    }
+}
