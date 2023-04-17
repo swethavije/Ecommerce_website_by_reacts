@@ -1,8 +1,8 @@
 .addProductBox{
     background-color:rgb(235 232 210 / 30%);
     text-align: center;
-    margin: 50px 200px;
-    padding: 50px;
+    margin: 30px 200px;
+    padding: 40px;
     box-shadow: 5px 10px 15px #888888;
 
     .inputbox{
@@ -10,6 +10,9 @@
     }
     .addbtn{
             font-size: 11px;
+    }
+    .error{
+        color:red;
     }
 
 

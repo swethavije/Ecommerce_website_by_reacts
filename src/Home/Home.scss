@@ -1,5 +1,5 @@
 .home{
-    margin:10px 20px
+    padding:20px 20px
 }
 
 
@@ -23,11 +23,13 @@
     }
     .productContent h6{
         color:red;
+        margin-top: 0;
+        margin-bottom: 10px;
         
     }
     .productContent p{
         font-size: 15px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     .productIcons{
         display:flex;

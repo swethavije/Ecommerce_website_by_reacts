@@ -1,0 +1,40 @@
+.productDetailBox{
+    display: flex;
+    .productImage{
+        width:50%;
+        height:auto;
+        padding: 10px 10px;
+        img{
+            width:100%;
+            height:auto;
+        }
+    }
+    .productContent{
+        width:50%;
+        height:auto;
+        padding: 10px 10px;
+        h3{
+            font-size: 16px;
+            font-weight: 600;
+        }
+        p{
+            font-size: 16px;
+            font-weight: 400;
+            color:rgb(38, 36, 36);
+        }
+        h5{
+            font-size: 16px;
+            font-weight: 600;
+            color:red; 
+        }
+        h6{
+            font-size: 16px;
+            font-weight: 600;
+            color:blue; 
+        }
+        .icon{
+            padding: 5px;
+        }
+        
+    }
+}
