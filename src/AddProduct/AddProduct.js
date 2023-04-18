@@ -22,6 +22,7 @@ function AddProduct() {
         return};
       setList([...productList,{ id:Math.floor(Math.random()*10),proname:productName,des:description,price:price,stock:stock}])
       console.log(productList)
+      alert("Product is Added")
     }
     localStorage.setItem('productList', JSON.stringify(productList));
 

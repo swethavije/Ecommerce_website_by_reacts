@@ -45,6 +45,7 @@ function Home() {
         newitem.quantity = 1;
         setCart([...addToCart,newitem]);
        }
+       alert("Product Added to Cart")
     };
   localStorage.setItem("cartItem",JSON.stringify(addToCart))
 // delete function
@@ -127,7 +128,7 @@ function Home() {
                     <div className="productBox"  >
                       <img  className="productimg" src={productImg} alt="productimg" onClick={()=>productDetailsFunc(item)}/>
                         
-                      <div className='productContent' id={index+1} >
+                      <div className='productContent' >
                       <h3>{item.proname}</h3>
                         <p>{item.des}</p>
                         <h6>Price:${item.price}</h6>
