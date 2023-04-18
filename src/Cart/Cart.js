@@ -19,8 +19,13 @@ function Cart() {
    if(finddata){
         let updatecartitem = cartlist.map((item)=>{
             if(item.id === id){
+              if(item.quantity<=item.stock){
                 item.quantity +=1;
                 return item;
+              }else{
+                alert("out of stock")
+                return item;
+              }
             }else{
                 return item;
             }
@@ -65,9 +70,8 @@ function decrement(id){
 const deleteItem = (id) => {
   setList(()=>cartlist.filter((item)=>item.id != id))
   console.log(cartlist)
-  localStorage.setItem('cartItem', JSON.stringify(cartlist));
-
 };
+localStorage.setItem('cartItem', JSON.stringify(cartlist));
 
 
   return (
@@ -88,14 +92,10 @@ const deleteItem = (id) => {
                                 {item.quantity}
                                 <RemoveCircleIcon onClick={()=>decrement(item.id)} />
                                 <DeleteIcon  onClick={()=>deleteItem(item.id)} />
-                               
-                               
-                        </div>
+                         </div>
                       </div>
                     </div>
-                
-                 
-            </Grid>
+             </Grid>
         )}
             
         </Grid>
