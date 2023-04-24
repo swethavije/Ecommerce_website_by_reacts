@@ -1,5 +1,5 @@
 export const initialState={
-   isLogin:JSON.parse(localStorage.getItem("isLogin")) || false
+   isLogin:JSON.parse(localStorage.getItem("isLogin")) || false,
     
 }
 export const stateReducer = (state,action) =>{

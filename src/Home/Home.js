@@ -9,6 +9,9 @@ import ShareIcon from '@mui/icons-material/Share';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Navigate,  useNavigate } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 function Home() {
   const productList=JSON.parse(localStorage.getItem("productList"));
@@ -45,7 +48,8 @@ function Home() {
         newitem.quantity = 1;
         setCart([...addToCart,newitem]);
        }
-       alert("Product Added to Cart")
+      //  alert("Product Added to Cart")
+      notify();
     };
   localStorage.setItem("cartItem",JSON.stringify(addToCart))
 // delete function
@@ -53,11 +57,12 @@ function Home() {
   const deleteItem = (id) => {
     setItems(()=>productItems.filter((item)=>item.id!= id))
     console.log(productItems)
+    deleteNotify();
     
   };
   localStorage.setItem('productList', JSON.stringify(productItems));
   //wishlist function
-  const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("wishList")||[]))
+  const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("wishList")||[]));
   // console.log(favorites)
   // const[isFavorites,setIsFavorites]=useState(false)
   // const toggleFavorite = (item) => {
@@ -118,6 +123,31 @@ function Home() {
     }
 
   };
+  const notify=()=>{
+    toast('🦄 ADDED TO CART!', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+    
+  }
+  const deleteNotify=()=>{
+    toast.warn('Product is Deleted!', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  }
 
   return (
     <div className="home">
@@ -150,6 +180,7 @@ function Home() {
                                             )}
                                 <ShareIcon/>
                                 <AddShoppingCartIcon onClick={()=>addCart(item.id)}/>
+                                <ToastContainer/>
                                 <DeleteIcon  onClick={()=>deleteItem(item.id)} />
                         </div>
                       </div>

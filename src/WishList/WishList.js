@@ -12,7 +12,7 @@ function WishList() {
   // localStorage.removeItem("wishList")
   console.log("wish",wishList)
 //favorites functions
-  const [favorites, setFavorites] = useState(wishList||[]);
+  const [favorites, setFavorites] = useState(wishList);
   // console.log(favorites)
   const addToFavorites=(item)=> {
     setFavorites([...favorites, item]);

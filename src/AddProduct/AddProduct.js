@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import "./AddProduct.scss"
 import { Button, TextField } from '@mui/material'
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 function AddProduct() {
     const[productName,setProduct]=useState("");
@@ -22,9 +25,23 @@ function AddProduct() {
         return};
       setList([...productList,{ id:Math.floor(Math.random()*10),proname:productName,des:description,price:price,stock:stock}])
       console.log(productList)
-      alert("Product is Added")
+      // alert("Product is Added")
+      notify();
     }
     localStorage.setItem('productList', JSON.stringify(productList));
+    const notify=()=>{
+      toast('🦄 Product Added!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+      
+    }
 
   return (
     <form className='addProductBox' onSubmit={handlesubmit}>
@@ -33,6 +50,7 @@ function AddProduct() {
           <TextField  className='inputbox' onChange={(e)=>setPrice(e.target.value)} id="outlined-number" label="Price" type="number" variant="outlined" size="small" fullWidth/>
           <TextField className='inputbox'  onChange={(e)=>setStock(e.target.value)} id="outlined-number" label="Stock" type="number" variant="outlined" size="small" fullWidth/>
           <Button  className='addbtn' variant="contained" type="submit">AddProduct</Button>
+          <ToastContainer/>
           {showError && <div className='error'>{showError}</div>}
     </form>
    
